@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2012, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- Cute & Minimal Theme Colors - Soft Pink & Lavender Style -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color resources for IceCreamSandwich theme. Cute Pink Base -->
+    <color name="highlight_color_ics">#FFF0A0D0</color>
+    <color name="typed_word_color_ics">#D8F0A0D0</color>
+    <color name="suggested_word_color_ics">#B2F0A0D0</color>
+    <color name="highlight_translucent_color_ics">#99F0A0D0</color>
+    <color name="key_text_color_holo">@android:color/white</color>
+    <color name="key_text_inactivated_color_holo">#66E0E4E5</color>
+    <color name="key_hint_letter_color_holo">#80000000</color>
+    <color name="key_hint_label_color_holo">#A0FFFFFF</color>
+    <color name="key_shifted_letter_hint_inactivated_color_holo">#66E0E4E5</color>
+    <color name="key_shifted_letter_hint_activated_color_holo">@android:color/white</color>
+    <color name="spacebar_text_color_holo">#FFC0C0C0</color>
+    <color name="spacebar_text_shadow_color_holo">#80000000</color>
+    <color name="gesture_floating_preview_color_holo">#C0000000</color>
+    <color name="emoji_tab_page_indicator_background_holo">#111111</color>
+    
+    <!-- Color resources for KLP theme. Soft Lavender -->
+    <color name="highlight_color_klp">#FFE6E0F0</color>
+    <color name="typed_word_color_klp">#D8E6E0F0</color>
+    <color name="suggested_word_color_klp">#B2E6E0F0</color>
+    <color name="highlight_translucent_color_klp">#99E6E0F0</color>
+
+    <!-- Color resources for LXX_Light theme - Cute Minimal Style
+         Soft Pink & Lavender palette with warm tones -->
+    <!-- Main text colors - Soft dark pink -->
+    <color name="key_text_color_lxx_light">#8B5A6B</color>
+    <color name="key_functional_text_color_lxx_light">#CC8B5A6B</color>
+    <color name="key_text_inactive_color_lxx_light">#B38B5A6B</color>
+    <color name="key_hint_letter_color_lxx_light">#B38B5A6B</color>
+    <color name="language_on_spacebar_text_color_lxx_light">#B38B5A6B</color>
+    
+    <!-- Accent colors - Lovely Pink -->
+    <color name="highlight_color_lxx_light">#F48FB1</color>
+    <color name="auto_correct_color_lxx_light">#8B5A6B</color>
+    <color name="typed_word_color_lxx_light">#D98B5A6B</color>
+    <color name="suggested_word_color_lxx_light">#B38B5A6B</color>
+    
+    <!-- Gesture & Trail colors - Soft Pink gradient -->
+    <color name="gesture_trail_color_lxx_light">#F8BBD9</color>
+    <color name="sliding_key_input_preview_color_lxx_light">#F48FB1</color>
+    
+    <!-- Key backgrounds - Warm cream & soft pink -->
+    <color name="key_background_lxx_light">#FFF5F8</color>
+    <color name="key_background_pressed_lxx_light">#26F48FB1</color>
+    
+    <!-- Action key - Cute Pink accent -->
+    <color name="action_key_background_lxx_light">#F48FB1</color>
+    <color name="action_key_background_pressed_lxx_light">#F8BBD9</color>
+    
+    <!-- Suggestion & Selection -->
+    <color name="suggested_word_background_selected_lxx_light">#26F48FB1</color>
+    <color name="gesture_floating_preview_color_lxx_light">#E6FFF5F8</color>
+    <color name="emoji_tab_page_indicator_background_lxx_light">#FCE4EC</color>
+    
+    <!-- Color resources for LXX_Light_Border theme - Cute Border Style -->
+    <color name="keyboard_background_lxx_light_border">#FFF0F5</color>
+    <color name="key_background_normal_lxx_light_border">#FFFFFF</color>
+    <color name="key_background_pressed_lxx_light_border">#FCE4EC</color>
+    <color name="key_background_functional_lxx_light_border">#F8BBD9</color>
+    <color name="key_bottom_bevel_lxx_light">#F48FB1</color>
+    <color name="emoji_tab_page_indicator_background_lxx_light_border">#F8BBD9</color>
+
+    <!-- Color resources for LXX_Dark theme - Cute Dark Mode
+         Soft purple & pink on dark background -->
+    <color name="key_text_color_lxx_dark">#FFFFFF</color>
+    <color name="key_functional_text_color_lxx_dark">#CCFFFFFF</color>
+    <color name="key_text_inactive_color_lxx_dark">#80FFFFFF</color>
+    <color name="key_hint_letter_color_lxx_dark">#80FFFFFF</color>
+    <color name="language_on_spacebar_text_color_lxx_dark">#B3FFFFFF</color>
+    
+    <!-- Dark theme accent - Soft Purple Pink -->
+    <color name="highlight_color_lxx_dark">#CE93D8</color>
+    <color name="auto_correct_color_lxx_dark">#FFFFFF</color>
+    <color name="typed_word_color_lxx_dark">#D9FFFFFF</color>
+    <color name="suggested_word_color_lxx_dark">#B3FFFFFF</color>
+    
+    <!-- Gesture colors for dark theme -->
+    <color name="gesture_trail_color_lxx_dark">#CE93D8</color>
+    <color name="sliding_key_input_preview_color_lxx_dark">#AB47BC</color>
+    
+    <!-- Dark theme backgrounds -->
+    <color name="key_background_lxx_dark">#00000000</color>
+    <color name="key_background_pressed_lxx_dark">#19CE93D8</color>
+    <color name="action_key_background_lxx_dark">#CE93D8</color>
+    <color name="action_key_background_pressed_lxx_dark">#E1BEE7</color>
+    <color name="suggested_word_background_selected_lxx_dark">#1CCE93D8</color>
+    <color name="gesture_floating_preview_color_lxx_dark">#E62D2A3A</color>
+    <color name="emoji_tab_page_indicator_background_lxx_dark">#3A2A3A</color>
+    
+    <!-- Color resources for LXX_Dark_Border theme - Cute Dark Border -->
+    <color name="keyboard_background_lxx_dark_border">#1A1A2E</color>
+    <color name="key_background_normal_lxx_dark_border">#4A4A6A</color>
+    <color name="key_background_pressed_lxx_dark_border">#5A5A7A</color>
+    <color name="key_background_functional_lxx_dark_border">#3A3A5A</color>
+    <color name="key_bottom_bevel_lxx_dark">#7A5A8A</color>
+    <color name="emoji_tab_page_indicator_background_lxx_dark_border">#3A3A5A</color>
+    
+    <!-- Color resources for LXX_Dark_Amoled theme -->
+    <color name="background_amoled_black">#000000</color>
+    <color name="background_amoled_dark">#1A1A1A</color>
+
+    <color name="popup_background_material_dark_theme">#ff3A2A4A</color>
+
+    <!-- Color resources for setup wizard and tutorial - Cute Style -->
+    <color name="setup_background">#FFF5F8</color>
+    <color name="setup_text_dark">#8B5A6B</color>
+    <color name="setup_text_action">#F48FB1</color>
+    <color name="setup_step_background">@android:color/white</color>
+    <color name="setup_welcome_video_margin_color">#F8BBD9</color>
+    
+    <!-- Accent color for the notification - Cute Pink -->
+    <color name="notification_accent_color">#FFF48FB1</color>
+</resources>
