@@ -10,26 +10,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 🚨 抢救 gradlew：如果文件丢失，直接从官方仓库下载
+      - name: Ensure gradlew exists
+        run: |
+          if [ ! -f gradlew ]; then
+            echo "gradlew not found, downloading from upstream..."
+            curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew -o gradlew
+            curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew.bat -o gradlew.bat
+            chmod +x gradlew
+          fi
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+
       - name: Install SDK components
         run: |
           sdkmanager "platforms;android-30" "build-tools;30.0.3"
           yes | sdkmanager --licenses || true
+
       - name: Set up JDK 11
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '11'
+
       - name: Build
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
