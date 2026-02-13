@@ -2,7 +2,7 @@ name: Build OpenBoard APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]   # ⚠️ 你的本地分支是 master，不是 main
   workflow_dispatch:
 
 jobs:
@@ -11,17 +11,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 🔥 完整抢救 Gradle Wrapper：下载 gradlew + wrapper 全部文件
+      # 1. 抢救 Gradle Wrapper
       - name: Ensure Gradle Wrapper is complete
         run: |
           mkdir -p gradle/wrapper
-          # 下载 gradlew 和 gradlew.bat
           curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew -o gradlew
           curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew.bat -o gradlew.bat
-          # 下载 wrapper 核心文件（缺这个就会 ClassNotFound）
           curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
           curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradle/wrapper/gradle-wrapper.properties -o gradle/wrapper/gradle-wrapper.properties
           chmod +x gradlew
+
+      # 2. 🔥 抢救项目配置文件（缺少这两个文件会导致 assembleDebug 找不到）
+      - name: Ensure project build files exist
+        run: |
+          if [ ! -f settings.gradle ]; then
+            curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/settings.gradle -o settings.gradle
+          fi
+          if [ ! -f build.gradle ]; then
+            curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/build.gradle -o build.gradle
+          fi
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -44,8 +52,7 @@ jobs:
           java-version: '11'
 
       - name: Build
-        run: |
-          ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
