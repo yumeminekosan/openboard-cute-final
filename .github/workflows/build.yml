@@ -11,15 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 🚨 抢救 gradlew：如果文件丢失，直接从官方仓库下载
-      - name: Ensure gradlew exists
+      # 🔥 完整抢救 Gradle Wrapper：下载 gradlew + wrapper 全部文件
+      - name: Ensure Gradle Wrapper is complete
         run: |
-          if [ ! -f gradlew ]; then
-            echo "gradlew not found, downloading from upstream..."
-            curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew -o gradlew
-            curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew.bat -o gradlew.bat
-            chmod +x gradlew
-          fi
+          mkdir -p gradle/wrapper
+          # 下载 gradlew 和 gradlew.bat
+          curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew -o gradlew
+          curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradlew.bat -o gradlew.bat
+          # 下载 wrapper 核心文件（缺这个就会 ClassNotFound）
+          curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
+          curl -sSL https://raw.githubusercontent.com/openboard-team/openboard/master/gradle/wrapper/gradle-wrapper.properties -o gradle/wrapper/gradle-wrapper.properties
+          chmod +x gradlew
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -43,7 +45,6 @@ jobs:
 
       - name: Build
         run: |
-          chmod +x gradlew
           ./gradlew assembleDebug
 
       - name: Upload APK
