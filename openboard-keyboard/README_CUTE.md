@@ -1,88 +1,66 @@
-# OpenBoard Cute Edition 🌸
+# 猫咪 OpenBoard ฅ^•ﻌ•^ฅ
 
-这是一个经过UI美化的OpenBoard键盘应用，采用了简约可爱的粉色/薰衣草配色风格。
+<p align="center">
+  <img src="https://img.shields.io/badge/状态-喵~-brightgreen" alt="状态">
+  <img src="https://img.shields.io/badge/基础-OpenBoard-blue" alt="基础">
+  <img src="https://img.shields.io/badge/许可证-GPLv3-blue" alt="许可证">
+</p>
 
-## 主要修改
+基于 [OpenBoard](https://github.com/openboard-team/openboard) 的猫咪输入法，100% 开源，带有猫咪文字变身功能！
 
-### 1. 配色方案 (colors.xml)
-- 采用柔和的粉色 (#F48FB1) 作为主色调
-- 温暖的奶油白 (#FFF5F8) 作为背景
-- 薰衣草紫 (#CE93D8) 用于深色主题
-- 整体简约可爱的视觉风格
+## ✨ 特色功能
 
-### 2. 应用图标
-- 全新的可爱风格应用图标
-- 粉色渐变背景
-- 简洁的键盘设计
+### 🐱 猫咪模式
+- **长按 Shift 键**：切换猫模式开关
+- **长按 z 键**：选择输入 "喵" 或 "咪"
 
-### 3. commitCurrentAutoCorrection 方法位置
-该方法位于以下文件中：
-```
-app/src/main/java/org/dslul/openboard/inputmethod/latin/inputlogic/InputLogic.java
-第 2119 行
-```
+猫模式开启后，文字会自动变成猫咪风格：
+- 「我是一个人。」→ 「猫是一只人咪喵~。」
 
-## 如何构建 APK
+### 🎨 春日青色主题
+温柔的浅灰蓝配色方案，视觉舒适不刺眼。
 
-### 环境要求
-- Android Studio (最新版本)
-- Android SDK 21+
-- JDK 11+
-- Gradle (项目自带 gradlew)
+## 📦 项目系列
 
-### 构建步骤
+| 版本 | 基础项目 | 链接 |
+|------|----------|------|
+| final | OpenBoard | [本仓库](https://github.com/yumeminekosan/openboard-cute-final) |
+| final-final | Trime (RIME) | [链接](https://github.com/yumeminekosan/openboard-cute-final-final) |
+| final-final-final | 自定义 IME | [链接](https://github.com/yumeminekosan/openboard-cute-final-final-final) |
 
-1. **安装 Android Studio**
-   - 从 https://developer.android.com/studio 下载并安装
+## 🔧 构建
 
-2. **打开项目**
-   ```bash
-   # 在 Android Studio 中选择 File -> Open -> 选择本项目目录
-   ```
+```bash
+# 克隆仓库
+git clone https://github.com/yumeminekosan/openboard-cute-final.git
 
-3. **同步 Gradle**
-   - Android Studio 会自动提示同步 Gradle
-   - 点击 "Sync Now" 等待完成
+# 进入项目目录
+cd openboard-cute-final/openboard-keyboard
 
-4. **构建 APK**
-   ```bash
-   # 方法1: 命令行构建
-   cd openboard-keyboard
-   ./gradlew assembleDebug
-   
-   # APK 输出位置:
-   # app/build/outputs/apk/debug/app-debug.apk
-   ```
-
-   或者在 Android Studio 中:
-   - Build -> Build Bundle(s) / APK(s) -> Build APK(s)
-
-5. **签名发布版 APK** (可选)
-   ```bash
-   ./gradlew assembleRelease
-   ```
-
-## 项目结构
-
-```
-openboard-keyboard/
-├── app/
-│   ├── src/main/
-│   │   ├── java/           # Java 源代码
-│   │   ├── res/
-│   │   │   ├── values/
-│   │   │   │   └── colors.xml  # 颜色配置 (已修改)
-│   │   │   ├── drawable/   # 图标和样式资源
-│   │   │   └── mipmap-*/   # 应用图标 (已修改)
-│   │   └── jni/            # Native 代码
-│   └── build.gradle
-└── README.md
+# 编译 Debug APK
+./gradlew assembleDebug
 ```
 
-## 原始项目
+## 📝 修改说明
 
-本项目基于 [openboard-team/openboard](https://github.com/openboard-team/openboard) 进行修改。
+基于原版 OpenBoard 的修改：
 
-## 许可证
+1. **KeyboardTextsTable.java** - z 键添加喵/咪选项
+2. **PointerTracker.java** - Shift 长按切换猫模式
+3. **CatModeManager.java** - 猫模式状态管理
+4. **配色文件** - 春日青色主题
 
-Apache License 2.0
+## 🙏 致谢
+
+- [OpenBoard](https://github.com/openboard-team/openboard) - 基础项目
+- [AOSP Keyboard](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/) - 原始代码
+
+## 📄 许可证
+
+GNU General Public License v3.0
+
+---
+
+<p align="center">
+  <b>喵~ 基于 OpenBoard 的可爱输入法</b>
+</p>
