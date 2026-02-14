@@ -1092,6 +1092,17 @@ public final class PointerTracker implements PointerTrackerQueue.Element,
                 return;
             }
         }
+        
+        // Long pressing Shift toggles cat mode (猫模式)
+        if (code == Constants.CODE_SHIFT) {
+            cancelKeyTracking();
+            boolean catModeEnabled = org.dslul.openboard.inputmethod.latin.utils.CatModeManager.toggleCatMode();
+            // Send a toast-like feedback by outputting text
+            String feedback = catModeEnabled ? "喵~ 猫模式已开启" : "咪~ 猫模式已关闭";
+            sListener.onTextInput(feedback);
+            sListener.onReleaseKey(code, false /* withSliding */);
+            return;
+        }
 
         setReleasedKeyGraphics(key, false /* withAnimation */);
         final MoreKeysPanel moreKeysPanel = sDrawingProxy.showMoreKeysKeyboard(key, this);

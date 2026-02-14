@@ -280,8 +280,10 @@ public final class KeyboardTextsTable {
         /* morekeys_s */ EMPTY,
         /* single_quotes */ "!text/single_lqm_rqm",
         /* keyspec_currency */ "$",
-        /* morekeys_y ~ */
-        EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+        /* morekeys_y */ EMPTY,
+        /* morekeys_z */ "\u55B5,\u54AA", // 喵,咪 - kitten mode options
+        /* morekeys_d ~ */
+        EMPTY, EMPTY, EMPTY, EMPTY,
         /* ~ morekeys_g */
         /* single_angle_quotes */ "!text/single_laqm_raqm",
         /* double_angle_quotes */ "!text/double_laqm_raqm",
